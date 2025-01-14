@@ -1,0 +1,7 @@
+name: 'Safetti Custom'
+type: module
+description: 'Provides a CRUD API for managing custom data in Drupal.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:system

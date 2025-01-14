@@ -1,0 +1,68 @@
+# Ignorar dependencias de Composer
+/vendor/
+/composer.lock
+
+# Ignorar archivos de configuración locales
+/sites/*/settings*.php
+/sites/*/services*.yml
+/sites/*/development.services.yml
+
+# Ignorar carpetas de archivos subidos por el usuario
+/sites/*/files/
+/sites/*/private/
+
+# Ignorar configuraciones específicas del entorno local
+/.env
+/.idea/
+/*.local
+/.DS_Store
+
+# Ignorar logs y caché
+*.log
+*.cache
+phpunit.xml
+phpunit.xml.dist
+
+# Ignorar binarios
+/bin/
+/node_modules/
+
+# Ignorar archivos temporales y de construcción
+/web/modules/contrib/*
+/web/themes/contrib/*
+/web/profiles/contrib/*
+/web/libraries/
+/web/core/
+/web/sites/default/files/
+/web/sites/simpletest/
+/tmp/
+/web/sites/default/files-translations/
+/web/sites/default/files-config/
+
+# Ignorar archivos de herramientas de desarrollo
+/vendor/
+/.drush/
+/.phpunit.result.cache
+/behat.yml
+
+# Ignorar archivos del sistema operativo
+Thumbs.db
+.DS_Store
+
+# Ignorar archivos generados por editores
+*.swp
+*~
+*.idea/
+*.vscode/
+
+# Ignorar paquetes comprimidos
+*.zip
+*.tar.gz
+*.rar
+
+# Ignorar archivos de integración continua
+/.github/
+/.gitlab-ci.yml
+
+# Ignorar configuraciones locales de Apache
+/.htaccess.local

@@ -1,0 +1,14 @@
+services:
+  safetti_custom.service:
+    class: 'Drupal\safetti_custom\Service\SafettiCustomService'
+    arguments: ['@database']
+
+  safetti_custom.controller:
+    class: 'Drupal\safetti_custom\Controller\SafettiCustomController'
+    arguments: ['@safetti_custom.service']
+
+  safetti_custom.jwt_validator:
+    class: 'Drupal\safetti_custom\Service\JwtValidator'
+
+  safetti_custom.data_validator:
+    class: 'Drupal\safetti_custom\Validator\SafettiCustomValidator'

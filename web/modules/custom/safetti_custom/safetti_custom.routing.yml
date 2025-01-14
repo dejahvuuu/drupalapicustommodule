@@ -1,0 +1,53 @@
+safetti_custom.get_data:
+  path: '/api/v1/safetti-custom'
+  defaults:
+    _controller: 'Drupal\safetti_custom\Controller\SafettiCustomController::getData'
+    _format: 'json'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+safetti_custom.post_data:
+  path: '/api/v1/safetti-custom'
+  defaults:
+    _controller: '\Drupal\safetti_custom\Controller\SafettiCustomController::postData'
+    _format: 'json'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+
+safetti_custom.put_data:
+  path: '/api/v1/safetti-custom/{id}'
+  defaults:
+    _controller: 'Drupal\safetti_custom\Controller\SafettiCustomController::putData'
+    _format: 'json'
+  methods: [PUT]
+  requirements:
+    _permission: 'access content'
+
+safetti_custom.delete_data:
+  path: '/api/v1/safetti-custom/{id}'
+  defaults:
+    _controller: 'Drupal\safetti_custom\Controller\SafettiCustomController::deleteData'
+    _format: 'json'
+  methods: [DELETE]
+  requirements:
+    _permission: 'access content'
+
+safetti_custom.get_token:
+  path: '/api/v1/safetti-custom/token'
+  defaults:
+    _controller: '\Drupal\safetti_custom\Controller\SafettiCustomController::getToken'
+    _format: 'json'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+
+safetti_custom.refresh_token:
+  path: '/api/v1/safetti-custom/refresh'
+  defaults:
+    _controller: '\Drupal\safetti_custom\Controller\SafettiCustomController::refreshToken'
+    _format: 'json'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'

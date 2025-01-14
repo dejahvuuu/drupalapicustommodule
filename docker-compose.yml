@@ -1,0 +1,36 @@
+services:
+  web:
+    image: drupal:9.5
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      DRUPAL_DATABASE_HOST: db
+      DRUPAL_DATABASE_PORT: 3306
+      DRUPAL_DATABASE_NAME: drupal
+      DRUPAL_DATABASE_USER: drupal
+      DRUPAL_DATABASE_PASSWORD: drupal
+    volumes:
+      - ./web:/var/www/html
+    networks:
+      - app_network
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app_network
+
+volumes:
+  db_data:
+
+networks:
+  app_network:
+    driver: bridge

@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function safetti_custom_install() {
+  $schema = \Drupal::database()->schema();
+
+  if (!$schema->tableExists('safetti_custom_data')) {
+    $schema->createTable('safetti_custom_data', [
+      'fields' => [
+        'nid' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'scenario_id' => [
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ],
+        'created_at' => [
+          'type' => 'varchar',
+          'length' => 20,
+          'not null' => TRUE,
+        ],
+      ],
+      'primary key' => ['nid', 'scenario_id'],
+    ]);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function safetti_custom_uninstall() {
+  \Drupal::database()->schema()->dropTable('safetti_custom_data');
+}
